@@ -22,13 +22,14 @@
 <section class="card-container">
   {% for destination in destinations %}
     <div class="card">
-      <div class="card-content">
-        <div class="card-img-container">
-          <img 
-            src="{% static 'images/sk8r-boi-cat.svg' %}" 
-            alt="A skater boy cat"
-          >
-        </div>
+      <a href="{% url 'destination-detail' destination.id %}">
+        <div class="card-content">
+          <div class="card-img-container">
+            <img 
+              src="{% static 'images/sk8r-boi-cat.svg' %}" 
+              alt="A skater boy cat"
+            >
+          </div>
         <h2 class="card-title">{{ destination.name }}</h2>
         <p><small>{{ destination.description }}</small></p>
       </div>
