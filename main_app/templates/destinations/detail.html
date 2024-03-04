@@ -22,6 +22,10 @@
     <h1>{{ destination.name }}</h1>
     <p>{{ destination.country }}</p>
     <p>{{ destination.description }}</p>
+    <div class="destination-actions">
+      <a href="{% url 'destination-update' destination.id %}" class="btn warn">Edit</a>
+      <a href="{% url 'destination-delete' destination.id %}" class="btn danger">Delete</a>
+    </div>
   </div>
 </section>
 
