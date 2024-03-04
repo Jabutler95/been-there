@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from .models import Destination
-from django.views.generic.edit import CreateView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 
 # Create your views here.
 def home(request):
@@ -20,3 +20,11 @@ def destination_detail(request, destination_id):
 class DestinationCreate(CreateView):
   model = Destination
   fields = '__all__'
+
+class DestinationUpdate(UpdateView):
+  model = Destination
+  fields = '__all__'
+
+class DestinationDelete(DeleteView):
+  model = Destination
+  success_url = '/destinations/'
