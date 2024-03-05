@@ -5,6 +5,8 @@ from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.contrib.auth.views import LoginView
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 # Create your views here.
 class Home(LoginView):
@@ -13,15 +15,18 @@ class Home(LoginView):
 def about(request):
   return render(request, 'about.html')
 
+@login_required
 def destination_index(request):
-  destinations = Destination.objects.all()
+  destinations = Destination.objects.filter(user=request.user)
   return render(request, 'destinations/index.html', {'destinations': destinations})
 
+@login_required
 def destination_detail(request, destination_id):
   destination = Destination.objects.get(id=destination_id)
   visit_form = VisitForm()
   return render(request, 'destinations/detail.html', { 'destination': destination, 'visit_form': visit_form }) 
 
+@login_required
 def add_visit(request, destination_id):
   form = VisitForm(request.POST)
   if form.is_valid():
@@ -31,7 +36,7 @@ def add_visit(request, destination_id):
   return redirect('destination-detail', destination_id=destination_id)
 
 
-class DestinationCreate(CreateView):
+class DestinationCreate(LoginRequiredMixin, CreateView):
   model = Destination
   fields = '__all__'
 
@@ -39,11 +44,11 @@ class DestinationCreate(CreateView):
     form.instance.user = self.request.user 
     return super().form_valid(form)
 
-class DestinationUpdate(UpdateView):
+class DestinationUpdate(LoginRequiredMixin, UpdateView):
   model = Destination
   fields = '__all__'
 
-class DestinationDelete(DeleteView):
+class DestinationDelete(LoginRequiredMixin, DeleteView):
   model = Destination
   success_url = '/destinations/'
 
@@ -60,4 +65,3 @@ def signup(request):
   form = UserCreationForm()
   context = {'form': form, 'error_message': error_message}
   return render(request, 'signup.html', context)
- 
