@@ -2,10 +2,11 @@ from django.shortcuts import render, redirect
 from .models import Destination
 from .forms import VisitForm
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from django.contrib.auth.views import LoginView
 
 # Create your views here.
-def home(request):
-  return render(request, 'home.html')
+class Home(LoginView):
+  template_name = 'home.html'
 
 def about(request):
   return render(request, 'about.html')
