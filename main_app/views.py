@@ -38,9 +38,9 @@ def add_visit(request, destination_id):
 
 class DestinationCreate(LoginRequiredMixin, CreateView):
   model = Destination
-  fields = '__all__'
+  fields = ['name', 'country', 'description', 'first_visit']
 
-  def form_vaild(self, form):
+  def form_valid(self, form):
     form.instance.user = self.request.user 
     return super().form_valid(form)
 
