@@ -3,6 +3,8 @@ from .models import Destination
 from .forms import VisitForm
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.contrib.auth.views import LoginView
+from django.contrib.auth import login
+from django.contrib.auth.forms import UserCreationForm
 
 # Create your views here.
 class Home(LoginView):
@@ -33,6 +35,10 @@ class DestinationCreate(CreateView):
   model = Destination
   fields = '__all__'
 
+  def form_vaild(self, form):
+    form.instance.user = self.request.user 
+    return super().form_valid(form)
+
 class DestinationUpdate(UpdateView):
   model = Destination
   fields = '__all__'
@@ -40,3 +46,18 @@ class DestinationUpdate(UpdateView):
 class DestinationDelete(DeleteView):
   model = Destination
   success_url = '/destinations/'
+
+def signup(request):
+  error_message = ''
+  if request.method == 'POST':
+    form = UserCreationForm(request.POST)
+    if form.is_valid():
+      user = form.save()
+      login(request, user)
+      return redirect('destination-index')
+    else:
+      error_message = 'Invalid sign up - try again'
+  form = UserCreationForm()
+  context = {'form': form, 'error_message': error_message}
+  return render(request, 'signup.html', context)
+ 
