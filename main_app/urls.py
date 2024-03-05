@@ -9,4 +9,5 @@ urlpatterns = [
   path('destinations/create/', views.DestinationCreate.as_view(), name='destination-create'),
   path('destinations/<int:pk>/update/', views.DestinationUpdate.as_view(), name='destination-update'),
   path('destinations/<int:pk>/delete/', views.DestinationDelete.as_view(), name='destination-delete'),
+  path('destinations/<int:destination_id>/add-visit/', views.add_visit, name='add-visit'),
 ]

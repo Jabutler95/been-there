@@ -18,6 +18,12 @@ class Destination(models.Model):
   
 class Visit(models.Model):
   date = models.DateField('Visit Date')
+  
+
+  destination = models.ForeignKey(Destination, on_delete=models.CASCADE)
 
   def __str__(self):
     return f"{self.get_visit_display()} on {self.date}"
+  
+  class Meta:
+    ordering = ['-date']
