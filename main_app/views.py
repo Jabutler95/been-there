@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .models import Destination
+from .forms import VisitForm
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 
 # Create your views here.
@@ -15,7 +16,8 @@ def destination_index(request):
 
 def destination_detail(request, destination_id):
   destination = Destination.objects.get(id=destination_id)
-  return render(request, 'destinations/detail.html', { 'destination': destination }) 
+  visit_form = VisitForm()
+  return render(request, 'destinations/detail.html', { 'destination': destination, 'visit_form': visit_form }) 
 
 class DestinationCreate(CreateView):
   model = Destination

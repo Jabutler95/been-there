@@ -28,5 +28,49 @@
     </div>
   </div>
 </section>
+<div class="visits-container">
+  <section class="visits">
+    <div class="subsection-title">
+      <h2>Visits</h2>
+      <img 
+        src="{% static 'images/cat-cone.svg' %}" 
+        alt="An ice cream cone cat"
+      />
+      <img 
+        src="{% static 'images/cat-onigiri.svg' %}"
+        alt="A cat as onigiri"
+      />
+      <img 
+        src="{% static 'images/kitty-kabob.svg' %}" 
+        alt="A kabob of kittens"
+      />
+    </div>
+    <table>
+      <thead>
+        <tr><th>Date</th><th>Visit</th></tr>
+      </thead>
+      <tbody>
+        {% for visit in destination.visit_set.all %}
+          <tr>
+            <td>{{visit.date}}</td>
+            <td>{{visit.get_meal_display}}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </section>
+</div>
+<h3>Add a visit to {{ desination.name }}</h3>
+<form
+  method="post" 
+  class="subsection-content"
+  autocomplete="off"
+>
+  {% csrf_token %}
+  {{ visit_form.as_p }}
+  <button type="submit" class="btn submit">Add Visit</button>
+</form>
+<h3>Past Visits to {{ destination.name }}</h3>
+<table>
 
 {% endblock %}
