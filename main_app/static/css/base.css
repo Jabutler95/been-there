@@ -1,11 +1,20 @@
-/* Reset Box Sizing */
-/* html {
-  box-sizing: border-box;
-} */
+#header-logo {
+  border: 2px solid #56aeff;
+  border-radius: 32px;
+  display: flex;
+  margin-right: 16px;
+}
 
-/* *, *::before, *::after {
-  box-sizing: inherit;
-} */
+.header-logo-container {
+  display: flex;
+  color: white;
+  width: 300px;
+}
+
+#header-h3 {
+  color: white;
+  text-decoration: none;
+}
 
 body {
   background-color: #b7cdda;
@@ -104,7 +113,7 @@ h2 {
 
   .header-logo-container {
     padding-top: 3px;
-    width: 213px;
+    width: 300px;
   }
 
   .page-header h1 {
@@ -120,7 +129,7 @@ h2 {
 @media only screen and (min-width: 1024px) {
   .header-logo-container {
     padding-top: 6px;
-    width: 256px;
+    width: 300px;
     height: 35px;
   }
 }

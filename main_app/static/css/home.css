@@ -20,10 +20,6 @@ img {
   border-radius: 16px;
 }
 
-.header-logo-container {
-  display: none;
-}
-
 .logo-container {
   max-width: 375px;
 }
