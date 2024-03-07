@@ -41,7 +41,7 @@
 <div class="visits-container">
   <section class="visits">
     <div class="subsection-title">
-      <h2>Visits</h2>
+      <h2>Visits to {{ destination.name }}</h2>
       <img 
         src="{% static 'images/cat-cone.svg' %}" 
         alt="An ice cream cone cat"
@@ -57,7 +57,7 @@
     </div>
     <table>
       <thead>
-        <tr><th>Date</th><th>Visit</th></tr>
+        <tr><th>Date</th></tr>
       </thead>
       <tbody>
         {% for visit in destination.visit_set.all %}
@@ -70,7 +70,7 @@
     </table>
   </section>
 </div>
-<h3>Add a visit to {{ desination.name }}</h3>
+<h3>Add a visit to {{ destination.name }}</h3>
 <form
   action = "{% url 'add-visit' destination.id %}"
   method="post" 
@@ -81,25 +81,5 @@
   {{ visit_form.as_p }}
   <button type="submit" class="btn submit">Add Visit</button>
 </form>
-<h3>Past Visits to {{ destination.name }}</h3>
-{% if destination_set.all.count %}
-<table>
-  <thead>
-    <tr><th>Date</th><th>Meal</th></tr>
-  </thead>
-  <tbody>
-    {% for visit in destination.visit_set.all %}
-      <tr>
-        <td>{{visit.date}}</td>
-        <td>{{visit.get_visit_display}}</td>
-      </tr>
-    {% endfor %}
-  </tbody>
-</table>
-{% else %}
-<div class="subsection-content">
-  <p>You have only been to {{ destination.name }} once.</p>
-</div>
-{% endif %}
 
 {% endblock %}

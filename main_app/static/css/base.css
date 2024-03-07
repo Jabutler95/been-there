@@ -44,6 +44,7 @@ body {
   --font-l: 1.8rem;
   --font-reg: 1.6rem;
   --card-border-radius: 6px;
+  background-image: ;
 }
 
 header {
@@ -268,4 +269,4 @@ nav li {
       backdrop-filter: blur(3px);
     }
   }
-}
+} 

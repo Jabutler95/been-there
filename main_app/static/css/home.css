@@ -21,10 +21,12 @@ main > section {
 
 .logo-container {
   max-width: 375px;
+
 }
 
 .destination-container {
-  width: 80%;
+  margin-right: 16px;
+  border-radius: 16px;
 }
 
 .login {
@@ -63,7 +65,7 @@ main > section {
   margin-top: 16px;
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 860px) {
   main {
     justify-content: space-around;
   }
