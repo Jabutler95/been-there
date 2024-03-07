@@ -15,13 +15,17 @@ main > section {
   flex-direction: column;
 }
 
+img {
+  border: 3px solid #56aeff;
+  border-radius: 16px;
+}
+
 .header-logo-container {
   display: none;
 }
 
 .logo-container {
   max-width: 375px;
-
 }
 
 .destination-container {
@@ -29,15 +33,20 @@ main > section {
   border-radius: 16px;
 }
 
+
 .login {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 80%;
+  border: 3px solid #56aeff;
+  background-color: #041c44;
+  color: white;
+  border-radius: 16px;
 }
 
-.login h1 {
+.login h1 { 
   font-size: clamp(3.2rem, 3vw, 4.8rem);
   margin: 10px 0;
 }
@@ -60,9 +69,21 @@ main > section {
 }
 
 .login .btn {
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 600;
+  color: white;
   align-self: flex-end;
   margin-right: 0;
   margin-top: 16px;
+  background-color: #041c44;
+  border: 2px solid #56aeff;
+  border-radius: 8px;
+  width: 80px;
+  padding: 8px;
+}
+
+.login .btn:hover {
+  color: #53a9f7;
 }
 
 @media only screen and (min-width: 860px) {
@@ -75,11 +96,8 @@ main > section {
   }
 
   .login {
-    border: var(--borders);
-    padding: 20px;
-    border-radius: var(--card-border-radius);
-    box-shadow: var(--card-box-shadow);
     width: 100%;
+    padding: 20px;
   }
 
   .logo-container {
