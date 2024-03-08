@@ -20,12 +20,13 @@
     <div class="card">
       <a href="{% url 'destination-detail' destination.id %}">
         <div class="card-content">
-          <div class="card-img-container">
-            {% comment %} <img 
+          {% comment %} stretch goal to allow user to upload an image of their destination to be displayed here. {% endcomment %}
+          {% comment %} <div class="card-img-container">
+            <img 
               src="{% static 'images/sk8r-boi-cat.svg' %}" 
               alt="A skater boy cat"
-            > {% endcomment %}
-          </div>
+            > 
+          </div> {% endcomment %}
         <h2 class="card-title">{{ destination.name }}</h2>
         <p><small>{{ destination.description }}</small></p>
       </div>
