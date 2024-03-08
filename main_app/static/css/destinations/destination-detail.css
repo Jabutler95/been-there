@@ -20,12 +20,31 @@
 }
 
 .destination-container {
-  padding: 35px 30px;
+  margin: 16px 0 8px 16px;
+  padding: 15px 30px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border: 2px solid black;
+}
+
+.details-btns {
+  font-family: "Bebas Neue", sans-serif; 
+  font-weight: 600;
+  font-size: 16px;
+  color: white;
+  align-self: flex-end;
+  background-color: #041c44;
+  border: 2px solid #56aeff;
+  border-radius: 8px;
+  width: 80px;
+  padding: 8px;
+  margin: 16px 20px 16px 0px;
+  text-decoration: none;
+}
+
+.details-btns:hover {
+  color: #56aeff;
 }
 
 .destination-details {
@@ -33,135 +52,93 @@
 }
 
 .destination-actions {
-  margin-top: 20px;
+  margin-top: 32px;
 }
 
 .visits-container {
+  margin: 8px 0 8px 16px;
+  padding: 15px 30px;
   display: flex;
   flex-direction: column;
   padding-bottom: 20px;
   align-items: center;
-  border: 2px solid black;
 }
 
 .visit-form-container {
-  border: 2px solid black;
+  margin: 16px;
 }
 
 .subsection-title {
-  display: flex;
-  align-items: center;
-  margin-bottom: 12px;
+  align-self: flex-start;
+  margin-bottom: 8px;
 }
 
 .subsection-content {
   margin: 0 8px;
 }
 
-.color-block {
-  opacity: 0.8;
-  height: 25px;
-  width: 25px;
-  margin-right: 10px;
-}
-
-
 .destination-details h1 {
-  margin: 15px 0 3px;
+  margin: 15px 0 18px;
 }
 
-.destination-details h2 {
-  font-size: var(--font-xl);
-  margin: 0 0 10px;
-  margin-top: 0;
-  margin-bottom: 10px;
-}
-
-.destination-details h3 {
-  margin: 20px 0 10px;
-  font-size: var(--font-l);
-}
 
 .destination-details p {
-  font-size: var(--font-reg);
-  margin: 5px 0;
+  margin: 16px 0 8px 0;
+  font-size: 20px;
 }
 
-.visits-container > section {
-  width: 80%;
-  min-width: 360px;
-  border: var(--borders);
-  border-radius: var(--card-border-radius);
-  padding: 10px;
-  box-shadow: var(--card-box-shadow);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin-bottom: 20px;
-}
-
-.subsection-title img {
-  height: 42px;
-  margin-left: 8px;
-}
-
-.subsection-title img:first-of-type {
-  margin-left: 16px;
-}
-
-/* .subsection-content p,
-.subsection-content input,
-.subsection-content select {
-  font-size: var(--font-l);
-} */
-
-/* .subsection-content input,
-.subsection-content select {
-  margin-left: 5px;
-  padding: 3px;
-} */
-
-.visits {
-  border: 2px solid black; 
+#pin-icon {
+  margin-right: 8px;
+  align-self: flex-end;
 }
 
 .visits table {
-  width: calc(100% - 16px);
+  font-size: 20px;
+  width: 100%;
   text-align: left;
   border-collapse: collapse;
   margin: 0 8px;
+  border: 2px solid #56aeff;
+  background-color: #041c44;
+  color: white;
 }
 
 .visits td {
-  padding: 8px 5px;
-  font-size: var(--font-reg);
+  padding: 8px 8px;
+  font-size: 20px;
 }
 
 .visits th {
-  font-size: var(--font-l);
+  font-size: 20px;
   padding: 5px 5px 0;
-  border-bottom: rgb(36, 116, 248) solid 2px;
+  border-bottom: 2px solid #56aeff;
 }
 
-.visits tr:nth-child(even) {
-  background-color: #f3f3fd;
+#id_date {
+  font-family: "Bebas Neue", sans-serif; 
+  font-size: 20px;
 }
 
-
-#file-input {
-  overflow: hidden;
-  position: absolute;
-  width: 0.1px;
-  height: 0.1px;
+.submit-visit-btn {
+  font-family: "Bebas Neue", sans-serif; 
+  font-weight: 600;
+  font-size: 16px;
+  color: white;
+  align-self: flex-end;
+  background-color: #041c44;
+  border: 2px solid #56aeff;
+  border-radius: 8px;
+  width:fit-content;
+  padding: 8px;
+  margin: 16px 20px 16px 0px;
 }
 
-#file-name {
-  margin-bottom: 10px;
+.submit-visit-btn:hover {
+  color: #56aeff;
 }
 
 @media only screen and (min-width: 768px) {
   .destination-container {
-    padding: 35px 30px;
     flex-direction: row;
     align-items: center;
     justify-content: start;
@@ -174,7 +151,7 @@
   }
 
   .visits-container {
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-around;
     align-items: flex-start;
   }
@@ -184,8 +161,10 @@
   }
 }
 
-@media only screen and (min-width: 1024px) {
+
+/* Need to adjust more in the container for this to display properly */
+/* @media only screen and (min-width: 1024px) {
   .visits-container {
     padding: 0 40px;
   }
-}
+} */

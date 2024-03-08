@@ -4,15 +4,20 @@
   width: 100%;
 }
 
+.btn.submit {
+  width: fit-content;
+  padding: 8px;
+}
+
 table {
-  padding: 0 40px;
+  padding: 0 16px;
   width: 100%;
   border-spacing: 0 20px;
 }
 
 th {
   text-align: left;
-  padding: 6px 20px 0 0;
+  padding: 6px 8px 0 0;
   font-weight: normal;
   vertical-align: top;
   font-size: var(--font-reg);

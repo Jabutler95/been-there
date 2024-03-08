@@ -88,6 +88,7 @@ h2 {
 .btn {
   font-family: "Bebas Neue", sans-serif; 
   font-weight: 600;
+  font-size: 20px;
   color: white;
   align-self: flex-end;
   margin-right: 40px;
@@ -101,6 +102,10 @@ h2 {
 
 .btn:hover {
   color: #56aeff;
+}
+
+hr {
+  border-color: #041c44;
 }
 
 /* Responsive Styling */
