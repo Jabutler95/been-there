@@ -8,8 +8,6 @@ Been There is the premier place to log your travels! Within the app, users can a
 
 [**Start logging your journies here!**](https://been-there.fly.dev/)
 
----
-
 ## Technologies Used: 
 
 - HTML
@@ -20,8 +18,6 @@ Been There is the premier place to log your travels! Within the app, users can a
 - Docker
 - Neon
 
----
-
 ## Ice Box 
 
 - Allow user to edit or delete a visit to a destination.
@@ -30,3 +26,6 @@ Been There is the premier place to log your travels! Within the app, users can a
 - Allow users to view other profiles and the destinations they have created
 - Add comments to destinations
 
+## Attributions 
+
+- Images sourced from [**Canva**](https://www.canva.com/)
