@@ -16,6 +16,10 @@
   text-decoration: none;
 }
 
+#header-h3:hover {
+  color: #56aeff;
+}
+
 body {
   background-color: #b7cdda;
   margin: 0;

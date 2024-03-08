@@ -1,19 +1,31 @@
+.page-container {
+  display: flex;
+}
+
+.images-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-right: 2px solid #041c44;
+  height: 100vh;
+}
+
+.detail-images {
+  margin: 32px 8px;
+  padding: 16px;
+  height: 100px;
+  width: fit-content;
+  border-radius: 32px;
+}
+
 .destination-container {
   padding: 35px 30px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-}
-
-.destination-img {
-  width: 75%;
-  max-width: 350px;
-}
-
-.usr-img {
-  width: 100%;
-  border-radius: var(--card-border-radius);
+  border: 2px solid black;
 }
 
 .destination-details {
@@ -29,6 +41,11 @@
   flex-direction: column;
   padding-bottom: 20px;
   align-items: center;
+  border: 2px solid black;
+}
+
+.visit-form-container {
+  border: 2px solid black;
 }
 
 .subsection-title {
@@ -41,12 +58,6 @@
   margin: 0 8px;
 }
 
-.toy-container {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-}
-
 .color-block {
   opacity: 0.8;
   height: 25px;
@@ -54,26 +65,8 @@
   margin-right: 10px;
 }
 
-.unfed,
-.fed,
-.no-toys,
-.all-toys {
-  margin: 0;
-  font-weight: bold;
-}
-
-.unfed,
-.no-toys {
-  color: var(--danger);
-}
-
-.fed,
-.all-toys {
-  color: var(--submit);
-}
 
 .destination-details h1 {
-  font-size: var(--font-xxl);
   margin: 15px 0 3px;
 }
 
@@ -116,28 +109,20 @@
   margin-left: 16px;
 }
 
-.visits h2,
-.toys h2 {
-  font-size: 3.2rem;
-  margin: 0;
-}
-
-.visits h3,
-.toys h3 {
-  font-size: var(--font-xl);
-  margin: 10px 0;
-}
-
-.subsection-content p,
+/* .subsection-content p,
 .subsection-content input,
 .subsection-content select {
   font-size: var(--font-l);
-}
+} */
 
-.subsection-content input,
+/* .subsection-content input,
 .subsection-content select {
   margin-left: 5px;
   padding: 3px;
+} */
+
+.visits {
+  border: 2px solid black; 
 }
 
 .visits table {
@@ -162,19 +147,6 @@
   background-color: #f3f3fd;
 }
 
-.toy-container p {
-  margin: 12px 0;
-}
-
-.toy-container a {
-  text-decoration: none;
-  color: #111;
-}
-
-.toy-container .btn {
-  padding: 3px 10px;
-  margin-left: 10px;
-}
 
 #file-input {
   overflow: hidden;

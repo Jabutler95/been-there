@@ -30,7 +30,7 @@
     <nav id='nav'>
       <ul>
         {% if user.is_authenticated %}
-          <li><a href="{% url 'destination-index' %}">Destinations</a></li>
+          <li><a href="{% url 'destination-index' %}">My Destinations</a></li>
           <li><a href="{% url 'destination-create' %}">Add a Destination</a></li>
           <li><a href="{% url 'about' %}">About</a></li>
           <li><a href="{% url 'logout' %}">Log out</a></li>
